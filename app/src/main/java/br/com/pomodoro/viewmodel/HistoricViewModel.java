@@ -1,5 +1,7 @@
 package br.com.pomodoro.viewmodel;
 
+import android.text.TextUtils;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,6 +37,13 @@ public class HistoricViewModel extends CommonViewModel {
         if (ListUtils.isEmpty(historicList)) {
             displayEmpty();
         } else {
+            String aux = null;
+            for (Historic historic : historicList) {
+                if (TextUtils.isEmpty(aux) || !aux.equals(historic.getDate())) {
+                    aux = historic.getDate();
+                    historic.setNewDay(true);
+                }
+            }
             historicInteraction.displayItems(historicList);
             displayContent();
         }

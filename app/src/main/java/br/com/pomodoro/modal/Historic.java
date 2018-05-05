@@ -25,8 +25,10 @@ public class Historic {
     @ColumnInfo(name = "hour")
     private long hour;
 
-    public Historic() {
-    }
+    @Ignore
+    private boolean newDay;
+
+    public  Historic(){}
 
     @Ignore
     public Historic(String timer) {
@@ -65,6 +67,14 @@ public class Historic {
 
     public void setHour(long hour) {
         this.hour = hour;
+    }
+
+    public boolean isNewDay() {
+        return newDay;
+    }
+
+    public void setNewDay(boolean newDay) {
+        this.newDay = newDay;
     }
 }
 

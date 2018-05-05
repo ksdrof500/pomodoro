@@ -29,9 +29,11 @@ public class HistoricItemViewModel extends BaseObservable {
         this.activity = activity;
     }
 
-    public void setContents(Historic historic, boolean newDay) {
-        if (newDay) {
+    public void setContents(Historic historic) {
+        if (historic.isNewDay()) {
             day.set(StringUtil.calculateBetweenDates(historic.getDate(), activity));
+        } else {
+            day.set(null);
         }
         timer.set(historic.getTimer());
         status.set(historic.getTimer().equals(TWENTY_FIVE) ? activity.getResources().getString(R.string.finish)
