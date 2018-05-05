@@ -4,6 +4,7 @@ import android.databinding.ObservableField;
 import android.os.CountDownTimer;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import br.com.pomodoro.R;
 import br.com.pomodoro.common.data.HistoricDataSource;
@@ -16,6 +17,7 @@ import static br.com.pomodoro.util.StringUtil.TWENTY_FIVE_MINUTES;
 import static br.com.pomodoro.util.StringUtil.calculateTimer;
 import static br.com.pomodoro.util.StringUtil.calculateTimerFinish;
 
+@Singleton
 public class PomodoroViewModel extends CommonViewModel {
 
     public final ObservableField<String> mTimer = new ObservableField<>();

@@ -40,6 +40,7 @@ public class PomodoroFragment extends Fragment implements PomodoroInteraction {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PomodoroApp.getAppComponent().inject(this);
+        pomodoroViewModel.setPomodoroInteraction(this);
     }
 
     @Nullable
@@ -52,7 +53,6 @@ public class PomodoroFragment extends Fragment implements PomodoroInteraction {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding = PomorodoFragmentBinding.bind(view);
-        pomodoroViewModel.setPomodoroInteraction(this);
         binding.setPomodoroVM(pomodoroViewModel);
     }
 
