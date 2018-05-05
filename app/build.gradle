@@ -6,7 +6,6 @@ project.ext {
     daggerVersion = "2.11"
     firebaseVersion = "15.0.2"
     roomVersion = "1.0.0"
-    lifecycleVersion = "1.0.0"
 }
 android {
     compileSdkVersion 27
