@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">POMODORO</string>
+    <string name="title_new">Novo</string>
+    <string name="title_historic">Histórico</string>
+    <string name="backpress">Pressione o Botão Voltar novamente para fechar o Aplicativo.</string>
+    <string name="empty">Opa, parece que não\ntrabalhamos ainda!</string>
+    <string name="description_notification">Parabéns, hora de descansar</string>
+    <string name="finish">Finalizado</string>
+    <string name="stop">Parado</string>
+    <string name="ago_seconds">%d segundos atrás</string>
+    <string name="ago_minutes">%d minutos atrás</string>
+    <string name="today">Hoje</string>
+    <string name="yesterday">Ontem</string>
+</resources>

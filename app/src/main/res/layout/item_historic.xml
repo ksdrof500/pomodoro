@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemViewModel"
+            type="br.com.pomodoro.viewmodel.HistoricItemViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_day"
+            android:layout_marginBottom="@dimen/margin_historic"
+            android:text="@{itemViewModel.day}"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_day"
+            android:visibility="@{itemViewModel.day != null ? View.VISIBLE : View.GONE}"
+            app:font="@{`semi_bold`}" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/day"
+            android:text="@{itemViewModel.timer}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_timer"
+            app:font="@{`regular`}" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timer"
+            android:text="@{itemViewModel.status}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_status"
+            android:layout_marginBottom="@dimen/margin_day"
+            app:font="@{`semi_bold`}" />
+
+        <TextView
+            android:id="@+id/last_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/status"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/timer"
+            android:gravity="center"
+            android:text="@{itemViewModel.lastTimer}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_ago"
+            app:font="@{`bold`}" />
+
+    </RelativeLayout>
+</layout>

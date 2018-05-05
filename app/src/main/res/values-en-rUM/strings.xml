@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">POMODORO</string>
+    <string name="title_new">New</string>
+    <string name="title_historic">Historic</string>
+    <string name="backpress">Click to go back to close the application.</string>
+    <string name="empty">Oops, it looks like we\nhave not worked yet!</string>
+    <string name="finish">Finish</string>
+    <string name="stop">Stoped</string>
+    <string name="ago_seconds">%d seconds ago</string>
+    <string name="ago_minutes">%d minutes ago</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+</resources>

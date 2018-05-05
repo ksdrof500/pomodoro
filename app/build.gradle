@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+project.ext {
+    supportLibraryVersion = "27.+"
+    daggerVersion = "2.11"
+    firebaseVersion = "15.0.2"
+    roomVersion = "1.0.0"
+    lifecycleVersion = "1.0.0"
+}
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "br.com.pomodoro"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+
+    // Google
+    api "com.android.support:appcompat-v7:$project.supportLibraryVersion"
+    api "com.android.support:design:$project.supportLibraryVersion"
+    api "com.android.support:cardview-v7:$project.supportLibraryVersion"
+    api "com.android.support:recyclerview-v7:$project.supportLibraryVersion"
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    //Firebase
+    api "com.google.firebase:firebase-core:$project.firebaseVersion"
+    api "com.google.firebase:firebase-crash:$project.firebaseVersion"
+    api "com.google.firebase:firebase-config:$project.firebaseVersion"
+    api 'com.google.firebase:firebase-auth:15.1.0'
+    api 'com.crashlytics.sdk.android:crashlytics:2.9.2'
+    api 'com.google.android.gms:play-services-auth:15.0.1'
+
+    // Dagger core
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    api "com.google.dagger:dagger:$project.daggerVersion"
+
+    // Dagger Android
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+    api "com.google.dagger:dagger-android-support:$project.daggerVersion"
+    api "com.google.dagger:dagger-android:$project.daggerVersion"
+
+    // FAB
+    api 'com.github.ohoussein.playpauseview:playpauseview:1.0.2'
+
+    // ROOM
+    api "android.arch.persistence.room:runtime:$project.roomVersion"
+    api "android.arch.persistence.room:runtime:$project.roomVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$project.roomVersion"
+}
+apply plugin: 'com.google.gms.google-services'
